@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="lens_core_sdk",
-    version="0.0.1",
+    version="0.1.0",
     author="Prakhar Kaushik",
     author_email="prakhar.k@polynomial.ai",
     description="Core Lens SDK",
@@ -17,7 +17,7 @@ setuptools.setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        "requests",
+        "requests==2019.12.20",
     ],
     python_requires=">=3.6",
 )

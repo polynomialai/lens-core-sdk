@@ -22,10 +22,10 @@ class lensCore:
             return {"status": "unauthorized", "msg": "Please set authentication URI"}
         return parseQuery(query, self.authenticationURI)
 
-    def querySuggestions(self, query):
+    def querySuggestions(self, query, queryID = 1234):
         if not self.authenticationURI:
             return {"status": "unauthorized", "msg": "Please set authentication URI"}
-        return querySuggestions(query, self.authenticationURI)
+        return querySuggestions(query, self.authenticationURI, queryID)
 
     def spellCheck(self, query):
         if not self.authenticationURI:
