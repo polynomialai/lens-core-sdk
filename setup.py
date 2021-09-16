@@ -17,7 +17,7 @@ setuptools.setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        "requests==2019.12.20",
+        "requests==2.26.0",
     ],
     python_requires=">=3.6",
 )
