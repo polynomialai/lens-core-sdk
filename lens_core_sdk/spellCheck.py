@@ -2,9 +2,12 @@ import requests
 import json
 
 
-def spellCheck(query, authenticationURI):
+def spellCheck(query, env, authenticationURI):
     body = {"query": query, "authenticationURI": authenticationURI}
-    url = "http://20.198.82.4:8084/spellCheck"
+    if env == "prod":
+        url = "https://lensservice.polynomial.ai/colive/spellCheck"
+    else:
+        url = "https://lensservice.polynomial.ai/colive/dev/spellCheck"
     res = requests.post(url=url, json=body)
     response = json.loads(res.text)
     if response["status"]:

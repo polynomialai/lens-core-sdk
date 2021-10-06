@@ -2,9 +2,12 @@ import requests
 import json
 
 
-def parseQuery(query, authenticationURI):
+def parseQuery(query, env, authenticationURI):
     body = {"query": query, "authenticationURI": authenticationURI}
-    url = "http://20.198.82.4:8084/queryParser"
+    if env == "prod":
+        url = "https://lensservice.polynomial.ai/colive/queryParser"
+    else:
+        url = "https://lensservice.polynomial.ai/colive/dev/queryParser"
     res = requests.post(url=url, json=body)
     response = json.loads(res.text)
     if response["status"]:

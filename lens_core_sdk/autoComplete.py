@@ -2,9 +2,12 @@ import requests
 import json
 
 
-def autoComplete(query, authenticationURI):
+def autoComplete(query, env, authenticationURI):
     body = {"query": query, "authenticationURI": authenticationURI}
-    url = "http://20.198.82.4:8084/autoComplete"
+    if env == "prod":
+        url = "https://lensservice.polynomial.ai/colive/autoComplete"
+    else:
+        url = "https://lensservice.polynomial.ai/colive/dev/autoComplete"
     res = requests.post(url=url, json=body)
     response = json.loads(res.text)
     if response["status"]:

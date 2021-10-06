@@ -1,3 +1,5 @@
 .env
 .vscode
 lens_core_sdk\__pycache__
+.envvar
+lens_core_sdk.egg-info
