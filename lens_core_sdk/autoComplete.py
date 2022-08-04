@@ -5,9 +5,9 @@ import json
 def autoComplete(query, env, authenticationURI):
     body = {"query": query, "authenticationURI": authenticationURI}
     if env == "prod":
-        url = "https://lensservice.polynomial.ai/colive/autoComplete"
+        url = "https://intelligence.polynomial.ai/lens_core_prod/autoComplete"
     else:
-        url = "https://lensservice.polynomial.ai/colive/dev/autoComplete"
+        url = "https://intelligence.polynomial.ai/lens_core_dev/autoComplete"
     res = requests.post(url=url, json=body)
     response = json.loads(res.text)
     if response["status"]:
