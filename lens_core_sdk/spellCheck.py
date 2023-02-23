@@ -5,7 +5,7 @@ import json
 def spellCheck(query, env, authenticationURI):
     body = {"query": query, "authenticationURI": authenticationURI}
     if env == "prod":
-        url = "https://intelligence.polynomial.ai/lens_core_prod/spellCheck"
+        url = "https://lenssmartsearch.polynomial.ai/lens_core/spellCheck"
     else:
         url = "https://intelligence.polynomial.ai/lens_core_dev/spellCheck"
     res = requests.post(url=url, json=body)

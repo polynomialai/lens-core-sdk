@@ -5,7 +5,7 @@ import json
 def parseQuery(query, env, authenticationURI):
     body = {"query": query, "authenticationURI": authenticationURI}
     if env == "prod":
-        url = "https://intelligence.polynomial.ai/lens_core_prod/queryParser"
+        url = "https://lenssmartsearch.polynomial.ai/lens_core/queryParser"
     else:
         url = "https://intelligence.polynomial.ai/lens_core_dev/queryParser"
     res = requests.post(url=url, json=body)

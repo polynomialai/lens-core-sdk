@@ -5,7 +5,7 @@ import json
 def querySuggestions(query, env, authenticationURI, queryID):
     body = {"query": query, "authenticationURI": authenticationURI, "queryID": queryID}
     if env == "prod":
-        url = "https://intelligence.polynomial.ai/lens_core_prod/querySuggestions"
+        url = "https://lenssmartsearch.polynomial.ai/lens_core/querySuggestions"
     else:
         url = "https://intelligence.polynomial.ai/lens_core_dev/querySuggestions"
     res = requests.post(url=url, json=body)
